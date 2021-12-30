@@ -6,7 +6,7 @@ use Banklink\Protocol\iPizza;
 
 /**
  * Banklink implementation for Swedbank using iPizza protocol for communication
- * For specs see https://www.swedbank.ee/static/pdf/business/d2d/paymentcollection/info_banklink_techspec_eng.pdf
+ * For specs see https://www.swedbank.ee/static/pdf/business/d2d/paymentcollection/Technical_Specification_Estonia_eng_28062021.pdf
  *
  * @author Roman Marintsenko <inoryy@gmail.com>
  * @author Markus Karileet <markus.karileet@codehouse.ee>

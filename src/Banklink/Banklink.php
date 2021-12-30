@@ -121,7 +121,14 @@ abstract class Banklink
         $this->testRequestUrl = $testUrl;
     }
 
-    /**
+	/**
+	 * @param mixed $productionUrl
+	 */
+	public function setProductionUrl($productionUrl) {
+		$this->productionRequestUrl = $productionUrl;
+	}
+
+	/**
      * Set reference prefix
      *
      * @param string $prefix
