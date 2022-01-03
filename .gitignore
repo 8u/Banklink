@@ -5,3 +5,4 @@ composer.phar
 vendor/
 .project
 .buildpath
+.DS_Store
