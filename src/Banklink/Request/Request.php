@@ -39,11 +39,13 @@ abstract class Request
      *
      * @return string
      */
-    public function buildRequestHtml()
+    public function buildRequestHtml($skipEmptyValues = false)
     {
         $output = '';
 
         foreach ($this->requestData as $key => $value) {
+        	if ($skipEmptyValues && !$value)
+        		continue;
             $output .= sprintf('<input id="%s" name="%s" value="%s" type="hidden" />', strtolower($key), $key, $value);
         }
 
