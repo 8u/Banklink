@@ -45,7 +45,7 @@ abstract class Banklink
      *
      * @return \Banklink\Request\PaymentRequest
      */
-    public function preparePaymentRequest($orderId, $sum, $message, $language = 'EST', $currency = 'EUR')
+    public function preparePaymentRequest($orderId, $sum, $message, $language = 'EST', $currency = 'EUR', $is1012request = false)
     {
         $requestData = $this->protocol->preparePaymentRequestData(
             $orderId, 
@@ -54,7 +54,8 @@ abstract class Banklink
             $this->requestEncoding, 
             $language, 
             $currency, 
-            $this->referencePrefix
+            $this->referencePrefix,
+        	$is1012request
         );
         $requestData = array_merge($requestData, $this->getAdditionalFields());
 

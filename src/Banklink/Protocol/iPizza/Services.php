@@ -14,6 +14,7 @@ final class Services
 {
     // Requests
     const PAYMENT_REQUEST_2015 = '1011';
+    const PAYMENT_REQUEST_2015_1012 = '1012';
     const AUTHENTICATE_REQUEST = '3001';
 
     // Responses
@@ -42,6 +43,20 @@ final class Services
                     Fields::CURRENCY,
                     Fields::SELLER_BANK_ACC,
                     Fields::SELLER_NAME,
+                    Fields::ORDER_REFERENCE,
+                    Fields::DESCRIPTION,
+                    Fields::SUCCESS_URL,
+                    Fields::CANCEL_URL,
+                    Fields::REQUEST_DATETIME
+                );
+            case Services::PAYMENT_REQUEST_2015_1012:
+                return array(
+                    Fields::SERVICE_ID,
+                    Fields::PROTOCOL_VERSION,
+                    Fields::SELLER_ID,
+                    Fields::ORDER_ID,
+                    Fields::SUM,
+                    Fields::CURRENCY,
                     Fields::ORDER_REFERENCE,
                     Fields::DESCRIPTION,
                     Fields::SUCCESS_URL,
@@ -90,6 +105,7 @@ final class Services
     {
         return array(
             self::PAYMENT_REQUEST_2015,
+			self::PAYMENT_REQUEST_2015_1012,
             self::PAYMENT_SUCCESS_2015,
             self::PAYMENT_CANCEL_2015,
             self::PAYMENT_ERROR

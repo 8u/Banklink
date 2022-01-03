@@ -56,11 +56,11 @@ class iPizza implements ProtocolInterface
      *
      * @return array
      */
-    public function preparePaymentRequestData($orderId, $sum, $message, $outputEncoding, $language = 'EST', $currency = 'EUR', $referencePrefix = null)
+    public function preparePaymentRequestData($orderId, $sum, $message, $outputEncoding, $language = 'EST', $currency = 'EUR', $referencePrefix = null, $is1012request = false)
     {
         $now = new \DateTime();
         $requestData = array(
-            Fields::SERVICE_ID       => Services::PAYMENT_REQUEST_2015,
+            Fields::SERVICE_ID       => $is1012request ? Services::PAYMENT_REQUEST_2015_1012 : Services::PAYMENT_REQUEST_2015,
             Fields::PROTOCOL_VERSION => $this->protocolVersion,
             Fields::SELLER_ID        => $this->sellerId,
             Fields::ORDER_ID         => $orderId,
