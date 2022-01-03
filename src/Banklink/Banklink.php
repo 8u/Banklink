@@ -25,6 +25,7 @@ abstract class Banklink
     protected $responseEncoding = 'UTF-8';
 
     protected $referencePrefix;
+    protected $referenceSuffix;
 
     /**
      * @param \Banklink\Protocol\ProtocolInterface $protocol
@@ -55,7 +56,8 @@ abstract class Banklink
             $language, 
             $currency, 
             $this->referencePrefix,
-        	$is1012request
+        	$is1012request,
+        	$this->referenceSuffix
         );
         $requestData = array_merge($requestData, $this->getAdditionalFields());
 
@@ -137,5 +139,15 @@ abstract class Banklink
     public function setReferencePrefix($prefix)
     {
         $this->referencePrefix = $prefix;
+    }
+
+	/**
+     * Set reference suffix
+     *
+     * @param string $suffix
+     */
+    public function setReferenceSuffix($suffix)
+    {
+        $this->referenceSuffix = $suffix;
     }
 }
